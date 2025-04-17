@@ -1,0 +1,96 @@
+@font-face {
+  font-family: ProtoNerdFont;
+  src: url(/assets/0xProtoNerdFont-Regular.ttf);
+}
+
+body, html {
+  height: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.background {
+  background-image: url("/assets/images/Omori_space_wallpaper.jpg");
+  filter: blur(4px);
+  -webkit-filter: blur(4px);
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.container {
+  background-color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  max-width: auto;
+  padding: 20px;
+  box-shadow: blue 0px 0px 0px 2px inset, rgb(255, 255, 255) 7px -7px 0px -3px, rgb(31, 193, 27) 7px -7px, rgb(255, 255, 255) 14px -14px 0px -3px, rgb(255, 217, 19) 14px -14px, rgb(255, 255, 255) 21px -21px 0px -3px, rgb(255, 156, 85) 21px -21px, rgb(255, 255, 255) 28px -28px 0px -3px;
+  border-radius: 20px;
+  font-family: ProtoNerdFont;
+
+  h1{
+    font-size: 2.5rem;
+    color: white;
+    text-align: center;
+  }
+
+  a{
+    color: white;
+  }
+}
+
+.content{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.section
+{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+
+  a{
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    .link-text{
+      margin-left: 10px;
+    }
+  }
+
+  p{
+    display: flex;
+    align-items: center;
+    margin: 5px 0;
+    margin-top: 10px;
+  }
+}
+
+.links{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.arrows{
+  color: white;
+  margin-left: 15px;
+  font-size: 1.5rem;
+  transition: transform 0.3s ease;
+  margin-top: 20%;
+
+  &:hover{
+    transform: scale(1.2);
+    transition: transform 0.3s ease;
+  }
+}
