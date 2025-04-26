@@ -137,7 +137,7 @@ body, html {
   align-items: center;
   justify-content: center;
   position: relative;
-  
+
   p{
     color: white;
   }
@@ -157,9 +157,6 @@ body, html {
     display: flex;
     align-items: center;
     margin-top: 10px;
-    .link-text{
-      margin-left: 10px;
-    }
   }
 
   p{
@@ -183,10 +180,10 @@ body, html {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  
+
   i {
     transition: transform 0.3s ease;
-    
+
     &:hover {
       transform: scale(1.2);
     }
