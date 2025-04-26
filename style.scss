@@ -22,15 +22,16 @@ body, html {
 }
 
 .container {
-  background-color: white;
+  background-color: black;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 2;
-  max-width: auto;
+  width: 450px;
+  height: 270px;
   padding: 20px;
-  box-shadow: blue 0px 0px 0px 2px inset, rgb(255, 255, 255) 7px -7px 0px -3px, rgb(31, 193, 27) 7px -7px, rgb(255, 255, 255) 14px -14px 0px -3px, rgb(255, 217, 19) 14px -14px, rgb(255, 255, 255) 21px -21px 0px -3px, rgb(255, 156, 85) 21px -21px, rgb(255, 255, 255) 28px -28px 0px -3px;
+  box-shadow: blue 0px 0px 0px 2px inset, rgb(0, 0, 0) 7px -7px 0px -3px, rgb(31, 193, 27) 7px -7px, rgb(0, 0, 0) 14px -14px 0px -3px, rgb(255, 217, 19) 14px -14px, rgb(0, 0, 0) 21px -21px 0px -3px, rgb(255, 156, 85) 21px -21px, rgb(0, 0, 0) 28px -28px 0px -3px;
   border-radius: 20px;
   font-family: ProtoNerdFont;
 
@@ -49,6 +50,9 @@ body, html {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  p{
+    color: white;
+  }
 }
 
 .section
