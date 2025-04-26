@@ -12,7 +12,12 @@ document.addEventListener('DOMContentLoaded', function() {
     // Hide all sections
     sections.forEach(section => {
       section.style.display = 'none';
+      section.classList.remove('active');
     });
+
+    // Show the selected section
+    sections[index].style.display = 'flex';
+    sections[index].classList.add('active');
 
     // Update current index
     currentIndex = index;
@@ -27,4 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Make the arrow look clickable
   arrowElement.style.cursor = 'pointer';
+
+  // Initialize first section (optional, if you want to ensure proper initial state)
+  showSection(currentIndex);
 });
