@@ -4,6 +4,9 @@
 }
 body, html {
   height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
 }
 
 * {
@@ -12,12 +15,15 @@ body, html {
 
 .background {
   background-image: url("/assets/images/Omori_space_wallpaper.jpg");
-  filter: blur(4px);
-  -webkit-filter: blur(4px);
-  height: 100%;
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  z-index: 1;
 }
 
 .container {
@@ -33,92 +39,13 @@ body, html {
   border-radius: 20px;
   font-family: ProtoNerdFont;
 }
+
 .container h1 {
   font-size: 2.5rem;
   color: white;
   text-align: center;
 }
-.container a {
-  color: white;
-}
 
-.content {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.content p {
-  color: white;
-}
-
-.section {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-.section a {
-  color: white;
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  margin-top: 10px;
-}
-.section a .link-text {
-  margin-left: 10px;
-}
-.section p {
-  display: flex;
-  align-items: center;
-  margin: 5px 0;
-  margin-top: 10px;
-}
-
-.links {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-
-@font-face {
-  font-family: ProtoNerdFont;
-  src: url(/assets/0xProtoNerdFont-Regular.ttf);
-}
-body, html {
-  height: 100%;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-.background {
-  background-image: url("/assets/images/Omori_space_wallpaper.jpg");
-  filter: blur(4px);
-  -webkit-filter: blur(4px);
-  height: 100%;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-.container {
-  background-color: black;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 2;
-  max-width: auto;
-  padding: 20px;
-  box-shadow: blue 0px 0px 0px 2px inset, rgb(0, 0, 0) 7px -7px 0px -3px, rgb(31, 193, 27) 7px -7px, rgb(0, 0, 0) 14px -14px 0px -3px, rgb(255, 217, 19) 14px -14px, rgb(0, 0, 0) 21px -21px 0px -3px, rgb(255, 156, 85) 21px -21px, rgb(0, 0, 0) 28px -28px 0px -3px;
-  border-radius: 20px;
-  font-family: ProtoNerdFont;
-}
-.container h1 {
-  font-size: 2.5rem;
-  color: white;
-  text-align: center;
-}
 .container a {
   color: white;
 }
@@ -129,6 +56,7 @@ body, html {
   justify-content: center;
   position: relative;
 }
+
 .content p {
   color: white;
 }
@@ -137,9 +65,10 @@ body, html {
   flex: 1;
   display: flex;
   flex-direction: column;
-  max-width: 300px; /* Set a fixed width for the text content */
+  max-width: auto; /* Set a fixed width for the text content */
   margin: 0 25px; /* Add some margin to create space for arrows */
 }
+
 .section a {
   color: white;
   text-decoration: none;
@@ -147,9 +76,7 @@ body, html {
   align-items: center;
   margin-top: 10px;
 }
-.section a .link-text {
-  margin-left: 10px;
-}
+
 .section p {
   display: flex;
   align-items: center;
@@ -171,9 +98,11 @@ body, html {
   top: 50%;
   transform: translateY(-50%);
 }
+
 .arrow-left i, .arrow-right i {
   transition: transform 0.3s ease;
 }
+
 .arrow-left i:hover, .arrow-right i:hover {
   transform: scale(1.2);
 }
@@ -186,4 +115,28 @@ body, html {
 .arrow-right {
   padding-top: 30%;
   right: 0;
+}
+
+#typewriter {
+  display: inline-block;
+  min-width: 10px;
+  margin-left: 15px;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+#typewriter::after {
+  content: "|";
+  animation: blink 1s infinite;
+  margin-left: 2px;
+  color: white; /* Cursor color */
+}
+
+@keyframes blink {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0;
+  }
 }/*# sourceMappingURL=style.css.map */
