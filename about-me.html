@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Me | Lumi-Ex</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      /* Gradient background with plum and deep blue */
+      background: linear-gradient(135deg, #681c53 0%, #2a3a52 100%);
+      min-height: 100vh;
+    }
+    .about-wrapper {
+      max-width: 700px;
+      margin: 48px auto 0 auto;
+      background: rgba(42, 58, 82, 0.92);
+      border-radius: 18px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+      padding: 40px 32px 32px 32px;
+      color: #f3e5ab;
+      font-family: "Lexend Deca", sans-serif;
+      backdrop-filter: blur(2px);
+    }
+    .about-wrapper h2 {
+      margin-top: 0;
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #9B287B;
+      letter-spacing: 1px;
+    }
+    .about-section {
+      margin-bottom: 32px;
+    }
+    .about-section:last-child {
+      margin-bottom: 0;
+    }
+    .about-section h3 {
+      margin: 0 0 10px 0;
+      font-size: 1.3rem;
+      color: #f3e5ab;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      background: linear-gradient(90deg, #9B287B 30%, #f3e5ab 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .about-section ul {
+      padding-left: 22px;
+      margin: 0;
+    }
+    .about-section li {
+      margin-bottom: 7px;
+      font-size: 1rem;
+      opacity: 0.92;
+    }
+    .about-section a {
+      color: #f3e5ab;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .about-section a:hover {
+      color: #9B287B;
+    }
+    @media (max-width: 600px) {
+      .about-wrapper {
+        padding: 18px 8px;
+      }
+    }
+    section.about-section {
+        ul li{
+            img{
+                height: 20px;
+                width: 20px;
+            }
+        }
+    }
+    .home-btn {
+        display: inline-block;
+        margin: 18px 0 0 45px;
+        padding: 8px 18px;
+        background: #9B287B;
+        color: #fff;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 600;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+        transition: background 0.2s;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>About Me</h1>
+  </header>
+  <div id="top">
+    <h2>Hi, I'm Lumi!</h2>
+    <p>Curious developer, streamer, and digital tinkerer.</p>
+  </div>
+<a href="index.html" class="home-btn">&#8592; Home</a>
+<div class="about-wrapper">
+    <section class="about-section">
+        <h3>👾 My Journey</h3>
+        <p>
+            I started coding out of curiosity and quickly fell in love with building things with text. From simple scripts to full-stack projects, I enjoy exploring new technologies and sharing what I learn. <br>
+            I love coding a bit of everything, from web apps to game development. My journey has been a mix of self-learning, online courses, and community engagement.      </p>
+    </section>
+    <section class="about-section">
+        <h3>🛠️ Skills &amp; Tools</h3>
+        <ul>
+            <li>JavaScript <img src="https://cdn.simpleicons.org/javascript" alt="JavaScript logo" /></li>
+            <li>Node.js <img src="https://cdn.simpleicons.org/node.js" alt="Node.js logo" /></li>
+            <li>Python <img src="https://cdn.simpleicons.org/python" alt="Python logo" /></li>
+            <li>Arduino <img src="https://cdn.simpleicons.org/arduino" alt="Arduino logo" /></li>
+            <li>HTML <img src="https://cdn.simpleicons.org/html5" alt="HTML5 logo" /></li>
+            <li>CSS <img src="https://cdn.simpleicons.org/css3" alt="CSS3 logo" /></li>
+            <li>SCSS <img src="https://cdn.simpleicons.org/sass" alt="SCSS logo" /></li>
+            <li>Git <img src="https://cdn.simpleicons.org/git" alt="Git logo" /></li>
+            <li>GitHub <img src="https://cdn.simpleicons.org/github" alt="GitHub logo" /></li>
+        </ul>
+    </section>
+    <section class="about-section">
+        <h3>🌐 Find Me Online</h3>
+        <ul>
+            <li><a href="https://twitch.tv/Lumi_ex_" target="_blank">Twitch</a></li>
+            <li><a href="https://youtube.com/@lumi-ex" target="_blank">YouTube</a></li>
+            <li><a href="https://x.com/" target="_blank">Twitter</a></li>
+            <li><a href="https://github.com/Lumi-ex" target="_blank">GitHub</a></li>
+        </ul>
+    </section>
+    <section class="about-section">
+        <h3>✨ Fun Facts</h3>
+        <ul>
+            <li>I love iced-tea and late-night coding sessions.</li>
+            <li>Always up for a challenge !</li>
+        </ul>
+    </section>
+</div>
+</body>
+</html>

@@ -6,41 +6,130 @@
     <title>Lumi-Ex | Downloads</title>
     <script src="https://kit.fontawesome.com/3db6513777.js" crossorigin="anonymous"></script>
     <style>
-        body{
-            background-color: rgb(182, 182, 182);
-            color: white;
+        body {
+            background: linear-gradient(135deg, #232526 0%, #414345 100%);
+            color: #f5f5f5;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            min-height: 100vh;
         }
-        a{
-            color: white;
+        .container {
+            max-width: 500px;
+            margin: 48px auto;
+            background: rgba(30, 30, 30, 0.92);
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+            padding: 32px 24px 24px 24px;
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: #b3e5fc;
+            text-decoration: none;
+            font-size: 1rem;
+            margin-bottom: 16px;
+            transition: color 0.2s;
+        }
+        .back-link:hover {
+            color: #4fc3f7;
+        }
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 8px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            color: #b3e5fc;
+        }
+        hr {
+            border: none;
+            border-top: 1px solid #444;
+            margin: 16px 0 24px 0;
+        }
+        .downloads-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .downloads-list li {
+            margin-bottom: 18px;
+        }
+        .download-link {
+            display: flex;
+            align-items: center;
+            background: #263238;
+            color: #fff;
+            text-decoration: none;
+            padding: 12px 16px;
+            border-radius: 8px;
+            font-size: 1.08rem;
+            transition: background 0.2s, color 0.2s;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+        }
+        .download-link:hover {
+            background: #37474f;
+            color: #b3e5fc;
+        }
+        .download-link i {
+            margin-right: 10px;
+            font-size: 1.2em;
+        }
+        sup {
+            font-size: 0.8em;
+            color: #b3e5fc;
+        }
+        @media (max-width: 600px) {
+            .container {
+                padding: 18px 6px 16px 6px;
+            }
+            h1 {
+                font-size: 1.3rem;
+            }
         }
     </style>
 </head>
 <body>
-    <a href="index.html">&#8592; back</a>
-    <p>///</p>
-    <hr>
-    <a href="/assets/Printable Mega Morpion_ENG.jpg" download>
-        - Printable Mega tic-tac-toe <sup>2</sup> (ENG)
-    </a>
-    <br>
-    <a href="/assets/Printable Tetra Morpion_ENG.jpg" download>
-        - Printable Tetra tic-tac-toe <sup>3</sup> (ENG)
-    </a>
-    <br>
-    <a href="/assets/Mega Morpion Imprimable FR.jpg" download>
-        - Mega Morpion Imprimable <sup>2</sup> (FR)
-    </a>
-    <br>
-    <a href="/assets/Tetra Morpion Imprimable FR.jpg" download>
-        - Tetra Morpion Imprimable <sup>3</sup> (FR)
-    </a>
-    <br>
-    <a href="/assets/Mega tres en raya imprimible ES.jpg" download>
-        - Mega tres en raya imprimible <sup>2</sup> (ES)
-    </a>
-    <br>
-    <a href="/assets/Tetra tres en raya imprimible ES.jpg" download>
-        - Tetra tres en raya imprimible <sup>3</sup> (ES)
-    </a>
+    <div class="container">
+        <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Back</a>
+        <h1><i class="fas fa-download"></i> Downloads</h1>
+        <hr>
+        <ul class="downloads-list">
+            <li>
+                <a href="/assets/downloads/Mega Morpion_ENG.jpg" download class="download-link">
+                    <i class="fas fa-file-download"></i>
+                    Printable Mega tic-tac-toe <sup>2</sup> (ENG)
+                </a>
+            </li>
+            <li>
+                <a href="/assets/downloads/Tetra Morpion_ENG.jpg" download class="download-link">
+                    <i class="fas fa-file-download"></i>
+                    Printable Tetra tic-tac-toe <sup>3</sup> (ENG)
+                </a>
+            </li>
+            <li>
+                <a href="/assets/downloads/Mega Morpion Imprimable FR.jpg" download class="download-link">
+                    <i class="fas fa-file-download"></i>
+                    Mega Morpion Imprimable <sup>2</sup> (FR)
+                </a>
+            </li>
+            <li>
+                <a href="/assets/downloads/Tetra Morpion Imprimable FR.jpg" download class="download-link">
+                    <i class="fas fa-file-download"></i>
+                    Tetra Morpion Imprimable <sup>3</sup> (FR)
+                </a>
+            </li>
+            <li>
+                <a href="/assets/downloads/Mega tres en raya imprimible ES.jpg" download class="download-link">
+                    <i class="fas fa-file-download"></i>
+                    Mega tres en raya imprimible <sup>2</sup> (ES)
+                </a>
+            </li>
+            <li>
+                <a href="/assets/downloads/Tetra tres en raya imprimible ES.jpg" download class="download-link">
+                    <i class="fas fa-file-download"></i>
+                    Tetra tres en raya imprimible <sup>3</sup> (ES)
+                </a>
+            </li>
+        </ul>
+    </div>
 </body>
 </html>
