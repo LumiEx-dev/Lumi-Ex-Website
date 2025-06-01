@@ -1,56 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
-  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-  <script src="script.js"></script>
-  <script src="https://kit.fontawesome.com/3db6513777.js" crossorigin="anonymous"></script>
-  <title>Lumi-ex</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lumi-Ex</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
-  <div class="background"></div>
-    <div class="container">
-      <div class="content">
-        <div class="arrow-left">
-          <i class="fa-solid fa-caret-left"></i>
-        </div>
-        <div class="home section active" id="section1">
-            <h1 style="display: flex; align-items: center;">
-            <img src="/assets/images/pfp.png" alt="discord pfp" style="height: 50px; width: 50px; margin-left: 10%">
-            <i id="typewriter"></i>
-            </h1>
-          <a href="https://x.com/Lumi_ex_dev/" target="_blank">
-            <i class="fa-brands fa-x-twitter"></i> <div class="link-text" style="margin-left: 10px;">Twitter</div>
-          </a>
-          <a href="https://www.instagram.com/lumi_ex_dev/" target="_blank">
-            <i class="fa-brands fa-instagram"></i> <div class="link-text" style="margin-left: 10px;">Instagram</div>
-          </a>
-          <a href="https://github.com/LumiEx-dev" target="_blank">
-            <img src="/assets/images/github-mark-white.svg" alt="Github logo" style="width: 20px; height: 20px;">
-            <div class="link-text" style="margin-left: 10px;">&lt;Github Projects&gt;</div>
-          </a>
-          <p><i class="fa-brands fa-discord"></i><x style="margin-left: 10px;">Discord : <i>Lumi_ex_</i></x></p>
-          <p><i class="fa-solid fa-envelope"></i> <x style="margin-left: 10px;">Pro : stellargames.lumi@gmail.com</x></p>
-        </div>
-        <div class="project section" id="section2" style="display: none;">
-          <h1><i>My Projects</i></h1>
-          <p><img src="/assets/images/noxi-logo.svg" alt="NoxiTech logo" style="width: 20px; height: 30px; padding-top: 10px;"><a href="https://noxitech.netlify.app/" style="margin-left: 10px;">NoxiTech Website !</a></p>
-          <a href="https://rpalette.netlify.app/" style="margin-left: 10px;">Random Color Palette Generator</a>
-          <a href="downloads.html" style="margin-left: 10px;"><p>Printable Mega/Tetra OxO</p></a>
-        </div>
-        <div class="other section" id="section3" style="display: none;">
-          <h1><i>Other Information</i></h1>
-          <p>More details coming soon!</p>
-        </div>
-        <div class="arrow-right">
-          <i class="fa-solid fa-caret-right"></i>
-        </div>
+  <header>
+    <h1>Lumi-Ex</h1>
+  </header>
+  <div id="top">
+    <h2>I code things, Sometimes...</h2>
+  </div>
+  <div class="movable-container" id="movableContainer">
+    <div class="movable-box" draggable="true">
+      <div class="box-header">Links</div>
+      <div class="box-content">
+        <ul style="display: flex; flex-direction: column; gap: 8px; padding-left: 20px; list-style: none; margin: 0;">
+          <li><a href="https://twitch.tv/Lumi_ex_">Twitch</a></li>
+          <li><a href="https://youtube.com/@lumi-ex">Youtube</a></li>
+          <li><a href="https://x.com/">Twitter</a></li>
+        </ul>
+        </ul>
+      </div>
+    </div>
+    <div class="movable-box" draggable="true" onclick="window.location.href='https://github.com/Lumi-ex'" style="cursor: pointer;">
+      <div class="box-header">Projects</div>
+      <div class="box-content">
+        All My Projects
+      </div>
+    </div>
+    <div class="movable-box" draggable="true" onclick="window.location.href='about-me.html'" style="cursor: pointer;">
+      <div class="box-header">About Me</div>
+      <div class="box-content">Learn more about my journey and who I am.</div>
+    </div>
+    <div class="movable-box" draggable="true" onclick="window.location.href='downloads.html'" style="cursor: pointer;">
+      <div class="box-header">Downloads</div>
+      <div class="box-content">
+        Things I created that are downloadable. <br>
+        - Mega / Tetra tic-tac-toe
       </div>
     </div>
   </div>
+  <script src="script.js"></script>
 </body>
 </html>
