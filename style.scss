@@ -10,10 +10,49 @@ $shadow-light: rgba(0, 0, 0, 0.15);
 $shadow-medium: rgba(0, 0, 0, 0.25);
 $shadow-heavy: rgba(0, 0, 0, 0.4);
 
+:root {
+  --bg-primary: #182238;
+  --bg-secondary: #2a3a52;
+  --text-primary: #f3e5ab;
+  --accent: #9B287B;
+}
+
+[data-theme="light"] {
+  --bg-primary: #f5f5f5;
+  --bg-secondary: #ffffff;
+  --text-primary: #333333;
+  --accent: #9B287B;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: var(--accent);
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: transform 0.2s ease;
+  z-index: 1000;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.1);
+}
+
 // Base styles
 body {
-  background-color: $bg-primary;
-  color: $text-primary;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
   font-family: "Lexend Deca", sans-serif;
   margin: 0;
   padding: 0;
@@ -160,3 +199,262 @@ header {
   transform: translateX(10px);
   border-left: 4px solid $accent-color;
 }
+
+/* Page transition animations */
+.page-transition {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.3s ease-in-out;
+}
+
+.page-transition.loaded {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered box animations */
+.movable-box {
+  animation: slideInUp 0.6s ease-out;
+  animation-fill-mode: both;
+}
+
+.movable-box:nth-child(1) { animation-delay: 0.1s; }
+.movable-box:nth-child(2) { animation-delay: 0.2s; }
+.movable-box:nth-child(3) { animation-delay: 0.3s; }
+.movable-box:nth-child(4) { animation-delay: 0.4s; }
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Micro-interactions */
+.movable-box {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.movable-box:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Mobile-first responsive grid */
+@media (max-width: 768px) {
+  .movable-container {
+    grid-template-columns: 1fr;
+    margin: 20px;
+    gap: 15px;
+  }
+
+  .movable-box {
+    height: auto;
+    min-height: 100px;
+    cursor: pointer; /* Change cursor for mobile */
+  }
+
+  /* Disable drag on mobile, enable tap */
+  .movable-box[draggable="true"] {
+    -webkit-user-drag: none;
+    -webkit-touch-callout: none;
+  }
+
+  header, #top {
+    margin-left: 20px;
+  }
+
+  header h1 {
+    font-size: 2rem;
+  }
+}
+
+/* Touch-friendly buttons */
+.home-btn, .download-link {
+  min-height: 44px; /* Minimum touch target size */
+  display: flex;
+  align-items: center;
+
+  justify-content: center;
+  padding: 0 18px;
+  border-radius: 8px;
+  background: var(--accent);
+  color: var(--text-primary);
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 8px $shadow-light;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.15s;
+
+  &:hover, &:focus {
+    background: darken($accent-color, 10%);
+    color: #fff;
+    box-shadow: 0 4px 16px $shadow-medium;
+    transform: translateY(-2px) scale(1.04);
+    outline: none;
+  }
+
+  &:active {
+    background: darken($accent-color, 18%);
+    transform: scale(0.98);
+  }
+}
+
+/* Enhanced theme toggle button */
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, $accent-color 60%, $bg-tertiary 100%);
+  color: $text-primary;
+  border: none;
+  border-radius: 50%;
+  width: 54px;
+  height: 54px;
+  box-shadow: 0 2px 12px $shadow-light;
+  font-size: 1.4rem;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.15s;
+  cursor: pointer;
+  z-index: 1000;
+
+  &:hover, &:focus {
+    background: linear-gradient(135deg, lighten($accent-color, 8%) 60%, lighten($bg-tertiary, 8%) 100%);
+    color: #fff;
+    box-shadow: 0 6px 24px $shadow-medium;
+    transform: scale(1.08) rotate(-6deg);
+    outline: none;
+  }
+
+  &:active {
+    background: linear-gradient(135deg, darken($accent-color, 8%) 60%, darken($bg-tertiary, 8%) 100%);
+    transform: scale(0.96) rotate(2deg);
+  }
+
+  /* Optional: subtle icon animation */
+  svg, i {
+    transition: transform 0.2s;
+  }
+  &:hover svg, &:hover i {
+    transform: rotate(20deg) scale(1.1);
+  }
+}
+
+
+    $bg: #10111F;
+    $barsize: 15px;
+
+
+.hr {
+    
+    width: 100%;
+    height: 1px;
+    display: block;
+    position: relative;
+    margin-bottom: 0em;
+    padding: 2em 0;
+
+    &:after,
+    &:before {
+
+        content: "";
+        position: absolute;
+
+        width: 100%;
+        height: 1px;
+        bottom: 50%;
+        left: 0;
+
+    }
+
+    &:before {
+
+        background: linear-gradient( 90deg, $bg 0%, $bg 50%, transparent 50%, transparent 100% );
+        background-size: $barsize;
+        background-position: center;
+        z-index: 1;
+
+    }
+
+    &:after {
+
+        transition: opacity 0.3s ease, animation 0.3s ease;
+
+        background: linear-gradient(
+            to right, 
+            #62efab 5%, 
+            #F2EA7D 15%, 
+            #F2EA7D 25%, 
+            #FF8797 35%, 
+            #FF8797 45%, 
+            #e1a4f4 55%, 
+            #e1a4f4 65%, 
+            #82fff4 75%, 
+            #82fff4 85%, 
+            #62efab 95%);
+
+        background-size: 200%;
+        background-position: 0%;
+        animation: bar 15s linear infinite;
+
+    }
+
+    @keyframes bar {
+
+        0% { background-position: 0%; }
+        100% { background-position: 200%; }
+
+    }
+    
+}
+
+
+
+
+.hr.anim {
+    &:before {
+        background: linear-gradient( 
+            90deg, 
+            $bg 0%, $bg 5%, 
+            transparent 5%, transparent 10%, 
+            $bg 10%, $bg 15%, 
+            transparent 15%, transparent 20%, 
+            $bg 20%, $bg 25%,
+            transparent 25%, transparent 30%,
+            $bg 30%, $bg 35%, 
+            transparent 35%, transparent 40%, 
+            $bg 40%, $bg 45%, 
+            transparent 45%, transparent 50%, 
+            $bg 50%, $bg 55%,
+            transparent 55%, transparent 60%,
+            $bg 60%, $bg 65%,
+            transparent 65%, transparent 70%, 
+            $bg 70%, $bg 75%, 
+            transparent 75%, transparent 80%, 
+            $bg 80%, $bg 85%,
+            transparent 85%, transparent 90%,
+            $bg 90%, $bg 95%, 
+            transparent 95%, transparent 100% );
+
+        background-size: $barsize * 10;
+        background-position: center;
+        z-index: 1;
+        
+        animation: bar 120s linear infinite;
+        
+    }
+    
+    &:hover {
+        &:before {
+            animation-duration: 20s;
+        }
+        &:after {
+            animation-duration: 2s;
+        }
+    }
+}
+

@@ -137,3 +137,45 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+
+// Add page transition
+document.addEventListener('DOMContentLoaded', () => {
+  document.body.classList.add('page-transition', 'loaded');
+});
+
+// Smooth page transitions between links
+document.addEventListener('click', (e) => {
+  if (e.target.tagName === 'A' && e.target.href && !e.target.target) {
+    e.preventDefault();
+    document.body.classList.remove('loaded');
+    setTimeout(() => {
+      window.location.href = e.target.href;
+    }, 300);
+  }
+});
+
+// Detect touch device and disable drag
+const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+
+if (isTouchDevice) {
+  document.querySelectorAll('.movable-box').forEach(box => {
+    box.setAttribute('draggable', 'false');
+  });
+}
+
+const themeToggle = document.getElementById('theme-toggle');
+const themeIcon = document.querySelector('.theme-icon');
+
+// Load saved theme
+const savedTheme = localStorage.getItem('theme') || 'dark';
+document.documentElement.setAttribute('data-theme', savedTheme);
+themeIcon.textContent = savedTheme === 'dark' ? '🌙' : '☀️';
+
+themeToggle.addEventListener('click', () => {
+  const currentTheme = document.documentElement.getAttribute('data-theme');
+  const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
+  document.documentElement.setAttribute('data-theme', newTheme);
+  localStorage.setItem('theme', newTheme);
+  themeIcon.textContent = newTheme === 'dark' ? '🌙' : '☀️';
+});
